@@ -37,7 +37,11 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [{ src: "~/plugins/vue-material" }, { src: "~/plugins/axios" }],
+  plugins: [
+    { src: "~/plugins/vue-material" },
+    { src: "~/plugins/axios" },
+    { src: "~/plugins/firestore" }
+  ],
   /*
    ** Nuxt.js modules
    */

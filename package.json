@@ -1,0 +1,20 @@
+{
+  "name": "nuxt-news",
+  "version": "1.0.0",
+  "description": "A news application built with Nuxt 2 and Firestore",
+  "author": "Juan Pablo Perez",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.3.6",
+    "nuxt": "^2.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  }
+}

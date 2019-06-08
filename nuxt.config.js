@@ -57,6 +57,11 @@ export default {
     "/api/": {
       target: "https://newsapi.org/v2/",
       pathRewrite: { "^/api/": "" }
+    },
+    "/register/": {
+      target:
+        "https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=AIzaSyBjq48QI0xbHMFMI3O_jGv7Z7Yo20qIGRQ",
+      pathRewrite: { "^/register/": "" }
     }
   },
   env: {

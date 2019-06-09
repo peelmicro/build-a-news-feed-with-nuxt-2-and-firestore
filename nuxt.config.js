@@ -3,6 +3,9 @@ const env = require("dotenv").config();
 export default {
   mode: "spa",
   env: env.parsed,
+  router: {
+    middleware: "check-auth"
+  },
   /*
    ** Headers of the page
    */
@@ -70,6 +73,12 @@ export default {
         "https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=" +
         process.env.FIREBASE_API_KEY,
       pathRewrite: { "^/register/": "" }
+    },
+    "/login/": {
+      target:
+        "https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=" +
+        process.env.FIREBASE_API_KEY,
+      pathRewrite: { "^/login/": "" }
     }
   },
   /*

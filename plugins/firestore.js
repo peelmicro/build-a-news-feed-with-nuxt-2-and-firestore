@@ -3,7 +3,7 @@ import "firebase/firestore";
 
 if (!firebase.apps.length) {
   var firebaseConfig = {
-    apiKey: "AIzaSyBjq48QI0xbHMFMI3O_jGv7Z7Yo20qIGRQ",
+    apiKey: process.env.FIREBASE_API_KEY,
     authDomain: "nuxt-blog-b3292.firebaseapp.com",
     databaseURL: "https://nuxt-blog-b3292.firebaseio.com",
     projectId: "nuxt-blog-b3292",

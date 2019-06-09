@@ -1,5 +1,8 @@
+const env = require("dotenv").config();
+
 export default {
   mode: "spa",
+  env: env.parsed,
   /*
    ** Headers of the page
    */
@@ -64,12 +67,10 @@ export default {
     },
     "/register/": {
       target:
-        "https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=AIzaSyBjq48QI0xbHMFMI3O_jGv7Z7Yo20qIGRQ",
+        "https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=" +
+        process.env.FIREBASE_API_KEY,
       pathRewrite: { "^/register/": "" }
     }
-  },
-  env: {
-    NEWS_API_KEY: "79e7f03896bd42fb99ebb9b33e55518f"
   },
   /*
    ** Build configuration

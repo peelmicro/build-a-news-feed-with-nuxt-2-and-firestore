@@ -32,7 +32,7 @@ export default {
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: "#9ccc65", height: "10px" },
+  loading: { color: "#9ccc65" },
   /*
    ** Global CSS
    */
@@ -46,7 +46,8 @@ export default {
   plugins: [
     { src: "~/plugins/vue-material" },
     { src: "~/plugins/axios" },
-    { src: "~/plugins/firestore" }
+    { src: "~/plugins/firestore" },
+    { src: "~/plugins/time-filters" }
   ],
   /*
    ** Nuxt.js modules

@@ -3,6 +3,7 @@ import md5 from "md5";
 import slugify from "slugify";
 import db from "~/plugins/firestore";
 import { saveUserData, clearUserData } from "~/utils";
+import defaultImage from "~/assets/default-image.jpg";
 
 const createStore = () => {
   return new Vuex.Store({
@@ -14,7 +15,8 @@ const createStore = () => {
       token: "",
       user: null,
       category: "",
-      country: "us"
+      country: "us",
+      source: ""
     },
     mutations: {
       setHeadlines(state, headlines) {
@@ -38,6 +40,9 @@ const createStore = () => {
       setCountry(state, country) {
         state.country = country;
       },
+      setSource(state, source) {
+        state.source = source;
+      },
       setFeed(state, headlines) {
         state.feed = headlines;
       },
@@ -55,6 +60,9 @@ const createStore = () => {
             remove: /[^a-zA-Z0-9 -]/g,
             lower: true
           });
+          if (!article.urlToImage) {
+            article.urlToImage = defaultImage;
+          }
           const headline = { ...article, slug };
           return headline;
         });
@@ -237,7 +245,8 @@ const createStore = () => {
       user: state => state.user,
       isAuthenticated: state => !!state.token,
       category: state => state.category,
-      country: state => state.country
+      country: state => state.country,
+      source: state => state.source
     }
   });
 };

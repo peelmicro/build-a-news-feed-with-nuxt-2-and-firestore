@@ -55,7 +55,15 @@ export default {
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
     "@nuxtjs/axios",
-    "@nuxtjs/proxy"
+    "@nuxtjs/proxy",
+    [
+      "nuxt-env",
+      {
+        keys: [
+          { key: "NEWS_API_KEY", secret: true } // Only inject the var server side
+        ]
+      }
+    ]
   ],
   /*
    ** Axios module configuration

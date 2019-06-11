@@ -6,6 +6,6 @@ export default function({ $axios, app, env }) {
     console.log("app.$env.NEWS_API_KEY", app.$env.NEWS_API_KEY);
     // config.headers.common["Authorization"] = process.env.NEWS_API_KEY;
     config.headers.common["Authorization"] =
-      env.NEWS_API_KEY || NUXT_ENV_NEWS_API_KEY;
+      env.NEWS_API_KEY || env.NUXT_ENV_NEWS_API_KEY;
   });
 }

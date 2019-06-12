@@ -71,7 +71,7 @@ export const actions = {
   async addHeadlineToFeed({ state }, headline) {
     const feedRef = db
       .collection(`users/${state.user.email}/feed`)
-      .doc(headline.title);
+      .doc(headline.slug);
 
     await feedRef.set(headline);
   },
@@ -82,14 +82,16 @@ export const actions = {
       await feedRef.onSnapshot(querySnapshot => {
         let headlines = [];
         querySnapshot.forEach(doc => {
-          headlines.push(doc.data());
-          commit("setFeed", headlines);
+          const data = doc.data();
+          const id = doc.id;
+          const headline = { ...data, id };
+          headlines.push(headline);
         });
 
         if (querySnapshot.empty) {
           headlines = [];
-          commit("setFeed", headlines);
         }
+        commit("setFeed", headlines);
       });
     }
   },

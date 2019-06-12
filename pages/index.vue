@@ -100,7 +100,7 @@
       ></md-empty-state>
 
       <!-- Feed Content (if Feed Not Empty) -->
-      <md-list class="md-triple-line" v-else v-for="(headline, i) in feed" :key="i">
+      <md-list class="md-triple-line" v-else v-for="headline in feed" :key="headline.i">
         <md-list-item>
           <md-avatar>
             <img :src="headline.urlToImage" :alt="headline.title">

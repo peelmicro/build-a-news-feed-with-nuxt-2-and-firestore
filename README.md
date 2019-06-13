@@ -1,6 +1,6 @@
 # Build a News Feed with Nuxt 2 and Firestore
 
-Source code for the [Build a News Feed with Nuxt 2 and Firestore](https://www.udemy.com/build-a-news-feed-with-nuxt-2-and-firestore/Udemy course).
+Source code for the [Build a News Feed with Nuxt 2 and Firestore](https://www.udemy.com/build-a-news-feed-with-nuxt-2-and-firestore) Udemy course.
 
 ## Rename the fake.env document
 
